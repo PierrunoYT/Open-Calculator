@@ -19,23 +19,53 @@ This project is a web-based calculator that mimics the style and functionality o
 - JavaScript
 - Flask (Python web framework)
 
-## Setup and Running
+## Project Structure
 
-1. Ensure you have Python and Flask installed on your system.
-2. Clone this repository to your local machine.
-3. Navigate to the project directory in your terminal.
-4. Run the Flask application:
+```
+Open-Calculator/
+│
+├── app.py                 # Flask application file
+├── index.html             # Main HTML file
+├── LICENSE                # MIT License file
+├── README.md              # This file
+│
+└── static/
+    ├── styles.css         # CSS styles for the calculator
+    └── script.js          # JavaScript for calculator functionality
+```
+
+## Prerequisites
+
+- Python 3.6 or higher
+- Flask
+
+## Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/your-username/Open-Calculator.git
+   cd Open-Calculator
+   ```
+
+2. Create a virtual environment (optional but recommended):
+   ```
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   ```
+
+3. Install the required packages:
+   ```
+   pip install flask
+   ```
+
+## Running the Application
+
+1. Start the Flask server:
    ```
    python app.py
    ```
-5. Open a web browser and go to `http://localhost:5000` to use the calculator.
 
-## Project Structure
-
-- `app.py`: Flask application file
-- `index.html`: Main HTML file for the calculator interface
-- `static/styles.css`: CSS file for styling the calculator
-- `static/script.js`: JavaScript file for calculator functionality
+2. Open a web browser and navigate to `http://localhost:5000`
 
 ## Usage
 
@@ -49,8 +79,19 @@ This project is a web-based calculator that mimics the style and functionality o
 
 ## Contributing
 
-Feel free to fork this project and submit pull requests with improvements or bug fixes.
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE). See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Inspired by the iPhone calculator design
+- Thanks to all contributors who have helped to improve this project
