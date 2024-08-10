@@ -32,6 +32,10 @@ body {
     gap: 10px;
 }
 
+.buttons button:nth-last-child(-n+3) {
+    grid-column: span 2;
+}
+
 button {
     padding: 10px;
     font-size: 18px;
