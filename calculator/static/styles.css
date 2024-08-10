@@ -1,23 +1,51 @@
+:root {
+    --bg-color: #000;
+    --calculator-bg: #000;
+    --display-bg: #fff;
+    --display-color: #000;
+    --button-bg: #333;
+    --button-color: #fff;
+    --operator-bg: #ff9f0a;
+    --special-bg: #a5a5a5;
+    --special-color: #000;
+}
+
+body.light-mode {
+    --bg-color: #f0f0f0;
+    --calculator-bg: #fff;
+    --display-bg: #f8f8f8;
+    --display-color: #000;
+    --button-bg: #e0e0e0;
+    --button-color: #000;
+    --operator-bg: #f1a33c;
+    --special-bg: #d4d4d4;
+    --special-color: #000;
+}
+
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #000;
+    background-color: var(--bg-color);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition: background-color 0.3s;
 }
 
 .calculator {
-    background-color: #000;
+    background-color: var(--calculator-bg);
     border-radius: 20px;
     overflow: hidden;
     width: 320px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 #display {
-    color: #000;
-    background-color: #fff;
+    color: var(--display-color);
+    background-color: var(--display-bg);
     text-align: right;
     font-size: 80px;
     padding: 20px;
@@ -26,6 +54,7 @@ body {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .buttons {
@@ -38,10 +67,10 @@ button {
     border: none;
     font-size: 30px;
     height: 80px;
-    background-color: #333;
-    color: #fff;
+    background-color: var(--button-bg);
+    color: var(--button-color);
     cursor: pointer;
-    transition: filter 0.3s;
+    transition: filter 0.3s, background-color 0.3s, color 0.3s;
 }
 
 button:hover {
@@ -49,14 +78,35 @@ button:hover {
 }
 
 button.operator {
-    background-color: #ff9f0a;
+    background-color: var(--operator-bg);
 }
 
 button.special {
-    background-color: #a5a5a5;
-    color: #000;
+    background-color: var(--special-bg);
+    color: var(--special-color);
 }
 
 button.zero {
     grid-column: span 2;
+}
+
+.mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.mode-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.light-mode .mode-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.1);
 }
